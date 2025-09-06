@@ -7,6 +7,10 @@ dotenv.config();
 
 const PORT = process.env.PORT || 8080;
 
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
 async function startServer() {
   try {
     await connectToDatabase();

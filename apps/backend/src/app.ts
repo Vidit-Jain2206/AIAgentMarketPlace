@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { apiRoutes } from "./routes/api/index.js";
+import { v1Router } from "./routes/index.js";
 dotenv.config();
 
 export const app = express();
@@ -13,8 +13,4 @@ app.use(express.urlencoded({ extended: true }));
 // Middleware to handle CORS
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("Welcome to the backend server!");
-});
-
-app.use("/api", apiRoutes);
+app.use("/api", v1Router);
