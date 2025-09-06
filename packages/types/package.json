@@ -1,0 +1,24 @@
+{
+  "name": "@repo/types",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "main": "./dist/types.js",
+  "types": "./dist/types.d.ts",
+  "dependencies": {
+    "@types/node": "^20.5.9"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "tsc -b"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/types.js",
+      "require": "./dist/types.cjs",
+      "types": "./dist/types.d.ts"
+    }
+  }
+}
