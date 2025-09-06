@@ -54,15 +54,13 @@ export const getAgentByCategory = async (req: Request, res: Response) => {
       return res.status(400).json({ message: "Invalid category parameter" });
     }
     const category = await CategoryModel.find({ name: categoryName });
+    if (category.length === 0) {
+      return res.status(202).json([]);
+    }
     const agents = await AgentModel.find({
       category: { id: category[0]?.id },
       isActive: true,
     }).populate("category");
-    if (agents.length === 0) {
-      return res
-        .status(404)
-        .json({ message: "No agents found in this category" });
-    }
     return res.status(200).json(agents);
   } catch (error) {
     console.error("Error fetching agents by category:", error);
