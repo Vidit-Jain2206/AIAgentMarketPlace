@@ -108,7 +108,7 @@ const AgentsSection = () => {
         {agents.map((agent) => (
           <Card
             key={agent.id}
-            className=" border-gray-900 bg-[#070708] hover:shadow-xl hover:scale-105 hover:border-white transition h-[230px] flex flex-col justify-between items-center rounded-xl"
+            className=" border-gray-900 bg-[#070708] hover:shadow-xl hover:scale-105 hover:border-white transition h-[230px] flex flex-col justify-between items-center rounded-xl cursor-pointer"
           >
             <CardContent className=" h-[73%] w-full">
               {/* logo */}
