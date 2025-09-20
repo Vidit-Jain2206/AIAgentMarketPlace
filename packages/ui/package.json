@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "exports": {
-    "./button": "./src/components/ui/button.tsx"
+    "./button": "./src/components/ui/button.tsx",
+    "./card": "./src/components/ui/card.tsx"
   },
   "scripts": {
     "lint": "eslint . --max-warnings 0",

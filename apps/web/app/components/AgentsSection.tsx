@@ -1,17 +1,11 @@
 import { Button } from "@repo/ui/src/components/ui/button";
 import { Card, CardContent } from "@repo/ui/src/components/ui/card";
 import { Link } from "lucide-react";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuTrigger,
-} from "@repo/ui/src/components/ui/dropdown-menu";
-import React from "react";
+
+import React, { useEffect } from "react";
 import DropdownSelect from "./DropDownMenu";
 import Image from "next/image";
+import { fetchAllCategories } from "../api/category";
 const agents = [
   {
     id: 1,
@@ -31,11 +25,60 @@ const agents = [
     desc: "AI powered search assistant lorem ipsum dolor sit amet.",
     category: "Research",
   },
+  {
+    id: 4,
+    name: "Perplexity",
+    desc: "AI powered search assistant lorem ipsum dolor sit amet.",
+    category: "Research",
+  },
+  {
+    id: 5,
+    name: "Perplexity",
+    desc: "AI powered search assistant lorem ipsum dolor sit amet.",
+    category: "Research",
+  },
+  {
+    id: 6,
+    name: "Perplexity",
+    desc: "AI powered search assistant lorem ipsum dolor sit amet.",
+    category: "Research",
+  },
+  {
+    id: 7,
+    name: "Perplexity",
+    desc: "AI powered search assistant lorem ipsum dolor sit amet.",
+    category: "Research",
+  },
+  {
+    id: 8,
+    name: "Perplexity",
+    desc: "AI powered search assistant lorem ipsum dolor sit amet.",
+    category: "Research",
+  },
+  {
+    id: 9,
+    name: "Perplexity",
+    desc: "AI powered search assistant lorem ipsum dolor sit amet.",
+    category: "Research",
+  },
 ];
 
 const AgentsSection = () => {
+  const [categories, setCategories] = React.useState([]);
   const [category, setCategory] = React.useState("Category");
   const [sortBy, setSortBy] = React.useState("Filter By");
+
+  useEffect(() => {
+    // Fetch categories from the backend API
+    fetchAllCategories()
+      .then((data) => {
+        setCategories(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching categories:", error);
+      });
+  }, []);
+
   return (
     <div className="border-2 border-gray-800 rounded-lg flex flex-col text-white w-[70%] mx-auto">
       {/*filter buttons */}
@@ -43,7 +86,7 @@ const AgentsSection = () => {
         <div className="border-2 border-gray-800 w-[40%] flex gap-2">
           <div className="w-[50%] text-white">
             <DropdownSelect
-              options={["Coding", "Marketing", "Design", "Writing"]}
+              options={categories.map((cat: any) => cat.name)}
               selectedState={category}
               setSelectedState={setCategory}
               defaultValue="Category"
