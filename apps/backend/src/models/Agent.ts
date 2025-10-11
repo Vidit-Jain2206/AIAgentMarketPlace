@@ -9,18 +9,19 @@ const LinkSchema = new Schema({
 
 const OtherInformationDescriptionSchema = new Schema({
   subHeading: { type: String, required: true },
-  subDescription: { type: String, required: true },
+  subDescription: { type: [String], required: false },
 });
 
 const OtherInformationSchema = new Schema({
   title: { type: String, required: true },
-  description: { type: [OtherInformationDescriptionSchema], required: true },
+  content: { type: [OtherInformationDescriptionSchema], required: true },
 });
 
 const AgentSchema = new Schema(
   {
     id: { type: String, required: true },
-    agentName: { type: String, required: true },
+    agentName: { type: String, required: true, unique: true },
+    agentKey: { type: String, required: true, unique: true },
     logo: { type: String, required: true },
     category: {
       type: mongoose.Schema.Types.ObjectId,

@@ -5,7 +5,8 @@ export enum SubscriptionType {
 
 export type Category = {
   id: string;
-  name: string;
+  categoryName: string;
+  categoryKey: string;
 };
 
 export type Link = {
@@ -16,21 +17,22 @@ export type Link = {
 export type Agent = {
   id: string;
   agentName: string;
+  agentKey: string;
   logo: string;
   category: Category;
   tagline: string;
-  shortDescription: string; // 150-200 characters
+  shortDescription: string;
   affiliatedOrNot: boolean;
-  agentLink: string; // Affiliate link or actual website link
+  agentLink: string;
   otherLinks: Link[];
-  subscriptionType: SubscriptionType[]; // Free, Paid, Free+paid
+  subscriptionType: SubscriptionType[];
   openSource: boolean;
-  overview: string; // 400 characters
+  overview: string;
   otherInformation: {
     title: string;
-    description: {
+    content: {
       subHeading: string;
-      subDescription: string; // 100 characters
+      subDescription: string[];
     }[];
   }[];
   runningCommands: string[];
@@ -38,5 +40,5 @@ export type Agent = {
   tags: string[];
   createdAt: Date;
   updatedAt: Date;
-  isActive: boolean; // Indicates if the agent is currently active
+  isActive: boolean;
 };

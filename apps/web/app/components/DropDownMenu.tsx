@@ -3,8 +3,12 @@
 import * as React from "react";
 import { ChevronDown, Check } from "lucide-react";
 
+interface Option {
+  key: string;
+  value: string;
+}
 interface DropdownSelectProps {
-  options: string[];
+  options: Option[];
   defaultValue?: string;
   selectedState: string;
   setSelectedState: (value: string) => void;
@@ -55,16 +59,16 @@ export default function DropdownSelect({
       {isOpen && (
         <div className="absolute mt-2 w-full shadow-lg z-50 bg-black border-[1px] border-gray-300">
           <ul className="flex flex-col gap-1">
-            {options.map((option) => (
+            {options.map((option: Option) => (
               <li
-                key={option}
-                onClick={() => handleSelect(option)}
+                key={option.key}
+                onClick={() => handleSelect(option.key)}
                 className={`flex items-center justify-between px-4 py-1 cursor-pointer transition text-sm hover:bg-gray-800
-                  ${selectedState === option ? "text-white" : "text-gray-300  hover:text-white"}
+                  ${selectedState === option.key ? "text-white" : "text-gray-300  hover:text-white"}
                 `}
               >
-                <span>{option}</span>
-                {selectedState === option && (
+                <span>{option.value}</span>
+                {selectedState === option.key && (
                   <Check className="h-4 w-4 text-white" />
                 )}
               </li>
