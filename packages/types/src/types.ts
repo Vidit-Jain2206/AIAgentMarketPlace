@@ -25,7 +25,7 @@ export type Agent = {
   affiliatedOrNot: boolean;
   agentLink: string;
   otherLinks: Link[];
-  subscriptionType: SubscriptionType[];
+  subscriptionType: SubscriptionType;
   openSource: boolean;
   overview: string;
   otherInformation: {

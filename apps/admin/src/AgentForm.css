@@ -1,0 +1,185 @@
+.agent-form {
+  width: 100%;
+  background-color: #070708;
+  border: 1px solid #1f1f1f;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-family: system-ui, sans-serif;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-form h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.5px;
+  color: #f5f5f5;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 0.95rem;
+  color: #bbb;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+input[type="text"],
+input[type="url"],
+textarea,
+select {
+  width: 100%;
+  padding: 10px 14px;
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  outline: none;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 70px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #666;
+  box-shadow: 0 0 0 2px #222;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.nested-section {
+  background-color: #0e0e0e;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.nested-section h3 {
+  font-size: 1.1rem;
+  color: #eaeaea;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #222;
+  padding-bottom: 6px;
+}
+
+.nested-group {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.add-btn,
+.remove-btn {
+  padding: 6px 12px;
+  background-color: #222;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.25s;
+  font-size: 0.9rem;
+}
+
+.add-btn:hover {
+  background-color: #333;
+}
+
+.remove-btn {
+  background-color: #3a0d0d;
+}
+
+.remove-btn:hover {
+  background-color: #5a1b1b;
+}
+
+.submit-btn {
+  width: 100%;
+  font-size: 1rem;
+  background-color: #333;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #444;
+}
+
+/* Tag and command chips */
+.chip-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.chip {
+  background-color: #1e1e1e;
+  border: 1px solid #333;
+  border-radius: 20px;
+  padding: 5px 12px;
+  font-size: 0.85rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.chip button {
+  background: none;
+  border: none;
+  width: 20px;
+  color: #ff5c5c;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.chip button:hover {
+  color: #ff8585;
+}
+
+/* Section divider for readability */
+.section-divider {
+  border-top: 1px solid #222;
+  margin: 30px 0;
+}

@@ -150,7 +150,7 @@ const AgentsSection = () => {
                       {agent.category.categoryName}
                     </p>
                     <p className="text-xs text-white bg-black border border-gray-800 px-[8px] py-[4px] rounded-lg ">
-                      {agent.subscriptionType[0]}
+                      {agent.subscriptionType}
                     </p>
                   </div>
                   {/* link */}

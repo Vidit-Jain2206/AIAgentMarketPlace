@@ -1,11 +1,11 @@
 import { Request, Response } from "express";
 import { CategoryModel } from "../models/Category.js";
+import { v4 as uuidv4 } from "uuid";
 
 export const addCategory = async (req: Request, res: Response) => {
-  // Logic to add a new category
   try {
-    const { id, categoryName }: { id: string; categoryName: string } = req.body;
-    if (!id || !categoryName) {
+    const { categoryName }: { categoryName: string } = req.body;
+    if (!categoryName) {
       return res.status(400).json({ message: "ID and name are required" });
     }
     const categoryKey = categoryName.toLowerCase().replace(/\s+/g, "-");
@@ -13,6 +13,7 @@ export const addCategory = async (req: Request, res: Response) => {
     if (categoryExists) {
       return res.status(409).json({ message: "Category name already exists" });
     }
+    const id = uuidv4();
     const newCategory = new CategoryModel({ id, categoryName, categoryKey });
     await newCategory.save();
 

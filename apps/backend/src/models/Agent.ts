@@ -34,7 +34,7 @@ const AgentSchema = new Schema(
     agentLink: { type: String, required: true },
     otherLinks: { type: [LinkSchema], default: [] },
     subscriptionType: {
-      type: [String],
+      type: String,
       enum: Object.values(SubscriptionType),
       required: true,
     },

@@ -2,6 +2,7 @@ import type { Request, Response } from "express";
 import { AgentModel } from "../models/Agent.js";
 import { CategoryModel } from "../models/Category.js";
 import { sanitizeObject } from "../utils/helper.js";
+import { v4 as uuidv4 } from "uuid";
 
 export const getAgentById = async (req: Request, res: Response) => {
   try {
@@ -139,7 +140,6 @@ export const getAgentsSearch = async (req: Request, res: Response) => {
 export const postAgent = async (req: Request, res: Response) => {
   try {
     const {
-      id,
       agentName,
       logo,
       category,
@@ -156,7 +156,6 @@ export const postAgent = async (req: Request, res: Response) => {
       installationCommands,
       tags,
     }: {
-      id: string;
       agentName: string;
       logo: string;
       category: string;
@@ -165,7 +164,7 @@ export const postAgent = async (req: Request, res: Response) => {
       affiliatedOrNot: boolean;
       agentLink: string;
       otherLinks: { url: string; title: string }[];
-      subscriptionType: string[];
+      subscriptionType: string;
       openSource: boolean;
       overview: string;
       otherInformation: {
@@ -202,6 +201,7 @@ export const postAgent = async (req: Request, res: Response) => {
     if (!categoryExists) {
       return res.status(400).json({ message: "Invalid category" });
     }
+    const id = uuidv4();
     const agentModel = new AgentModel({
       id,
       agentName,
