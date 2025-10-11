@@ -7,7 +7,7 @@ import DropdownSelect from "./DropDownMenu";
 import Image from "next/image";
 import { fetchAllCategories } from "../api/category";
 import { Agent, Category } from "@repo/types";
-import { getAgentsByCategory } from "../api/agent";
+import { getAgentsByCategory, getAllAgents } from "../api/agent";
 const agentsLimitPerPage = 9;
 const AgentsSection = () => {
   const [categories, setCategories] = useState<Category[]>([]);
@@ -15,9 +15,11 @@ const AgentsSection = () => {
   const [sortBy, setSortBy] = useState("Filter By");
   const [agentsList, setAgentsList] = useState<Agent[]>([]);
   const [pageIndex, setPageIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch categories from the backend API
+    setLoading(true);
     async function fetchCategories() {
       try {
         const data = await fetchAllCategories();
@@ -26,7 +28,18 @@ const AgentsSection = () => {
         console.error("Error fetching categories:", error);
       }
     }
-    fetchCategories();
+    async function fetchAllAgents() {
+      try {
+        const response = await getAllAgents();
+        setAgentsList(response);
+      } catch (error) {
+        console.error("Error fetching agents by category:", error);
+      }
+    }
+    const promiseObjects = [fetchCategories(), fetchAllAgents()];
+    Promise.all(promiseObjects)
+      .then(() => setLoading(false))
+      .catch(() => setLoading(false));
   }, []);
 
   useEffect(() => {
@@ -44,6 +57,10 @@ const AgentsSection = () => {
       fetchAgentsByCategory("");
     }
   }, [selectedCategory]);
+
+  if (loading) {
+    return <div className="text-white">Loading...</div>;
+  }
 
   console.log("pageIndex", pageIndex);
   return (
