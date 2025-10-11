@@ -1,6 +1,7 @@
 import { Button } from "@repo/ui/src/components/ui/button";
 import { Card, CardContent } from "@repo/ui/src/components/ui/card";
 import { Link } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 import React, { useEffect, useState } from "react";
 import DropdownSelect from "./DropDownMenu";
@@ -16,7 +17,7 @@ const AgentsSection = () => {
   const [agentsList, setAgentsList] = useState<Agent[]>([]);
   const [pageIndex, setPageIndex] = useState(0);
   const [loading, setLoading] = useState(true);
-
+  const router = useRouter();
   useEffect(() => {
     // Fetch categories from the backend API
     setLoading(true);
@@ -61,8 +62,6 @@ const AgentsSection = () => {
   if (loading) {
     return <div className="text-white">Loading...</div>;
   }
-
-  console.log("pageIndex", pageIndex);
   return (
     <div className="border-2 border-gray-800 rounded-lg flex flex-col text-white w-[70%] mx-auto">
       {/*filter buttons */}
@@ -119,6 +118,9 @@ const AgentsSection = () => {
           .map((agent) => (
             <Card
               key={agent.agentName}
+              onClick={() => {
+                router.push(`/agent/${agent.agentKey}`);
+              }}
               className=" border-gray-900 bg-[#070708] hover:shadow-xl hover:scale-105 hover:border-white transition h-[230px] flex flex-col justify-between items-center rounded-xl cursor-pointer"
             >
               <CardContent className=" h-[73%] w-full">
@@ -141,14 +143,14 @@ const AgentsSection = () => {
               </CardContent>
               <hr className="h-[1px] w-full border-gray-900" />
               <CardContent className="w-full py-0! h-[27%] flex flex-col justify-center items-center">
-                <div className="w-full flex items-center justify-between">
+                <div className="w-full flex flex-row items-center justify-between">
                   {/* tags */}
-                  <div className="w-[70%] flex flex-row items-start justify-start flex-wrap gap-2">
+                  <div className="w-[70%] flex flex-row items-start justify-start gap-2">
                     <p className="text-xs text-white bg-black border border-gray-800 px-[8px] py-[4px] rounded-lg ">
                       {agent.category.categoryName}
                     </p>
                     <p className="text-xs text-white bg-black border border-gray-800 px-[8px] py-[4px] rounded-lg ">
-                      {agent.category.categoryName}
+                      {agent.subscriptionType[0]}
                     </p>
                   </div>
                   {/* link */}
