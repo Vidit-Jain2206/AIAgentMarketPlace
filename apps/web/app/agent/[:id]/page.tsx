@@ -3,7 +3,7 @@ import { Button } from "@repo/ui/src/components/ui/button";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import { Agent } from "@repo/types";
+import type { Agent } from "@repo/types";
 import { getAgentDetails } from "@/app/api/agent";
 import Link from "next/link";
 

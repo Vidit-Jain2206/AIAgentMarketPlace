@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 import DropdownSelect from "./DropDownMenu";
 import Image from "next/image";
 import { fetchAllCategories } from "../api/category";
-import { Agent, Category } from "@repo/types";
+import type { Agent, Category } from "@repo/types";
 import { getAgentsByCategory, getAllAgents } from "../api/agent";
 const agentsLimitPerPage = 9;
 const AgentsSection = () => {
