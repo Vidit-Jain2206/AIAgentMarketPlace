@@ -47,7 +47,9 @@ export default function RootLayout({
         className={`${orbitron.variable} ${spaceMono.variable} ${rajdhani.variable} antialiased bg-black font-rajdhani`}
       >
         <Navbar />
-        {children}
+        <main className="pt-16 sm:pt-20">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
