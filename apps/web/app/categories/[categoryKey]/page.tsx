@@ -252,8 +252,8 @@ const CategoryDetailPage = () => {
               onClick={() => setFilterType("paid")}
               className={`px-4 py-3 font-space-mono text-sm transition ${
                 filterType === "paid"
-                  ? "bg-yellow-400 text-black"
-                  : "bg-black border border-gray-800 text-gray-500 hover:border-yellow-400/50 hover:text-yellow-400"
+                  ? "bg-fuchsia-400 text-black"
+                  : "bg-black border border-gray-800 text-gray-500 hover:border-fuchsia-400/50 hover:text-fuchsia-400"
               }`}
             >
               PAID
@@ -319,7 +319,7 @@ const CategoryDetailPage = () => {
                       className={`px-2 py-1 text-xs font-space-mono ${
                         agent.subscriptionType === "free"
                           ? "bg-lime-500/10 text-lime-400 border border-lime-500/30"
-                          : "bg-yellow-500/10 text-yellow-400 border border-yellow-500/30"
+                          : "bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/30"
                       }`}
                     >
                       {agent.subscriptionType?.toUpperCase()}

@@ -82,7 +82,7 @@ const SimilarAgents = ({ agents }: SimilarAgentsProps) => {
                   className={`px-2 py-1 text-xs font-space-mono ${
                     agent.subscriptionType === "free"
                       ? "bg-lime-500/10 text-lime-400 border border-lime-500/30"
-                      : "bg-yellow-500/10 text-yellow-400 border border-yellow-500/30"
+                      : "bg-fuchsia-500/10 text-fuchsia-400 border border-fuchsia-500/30"
                   }`}
                 >
                   {agent.subscriptionType?.toUpperCase()}

@@ -14,8 +14,8 @@ const StatusCard = ({ createdAt }: StatusCardProps) => {
       className="bg-black border border-gray-800 p-4 font-space-mono text-xs"
     >
       <div className="flex items-center gap-2 mb-3 pb-2 border-b border-gray-800">
-        <div className="w-3 h-3 rounded-full bg-red-500" />
-        <div className="w-3 h-3 rounded-full bg-yellow-500" />
+        <div className="w-3 h-3 rounded-full bg-fuchsia-500" />
+        <div className="w-3 h-3 rounded-full bg-cyan-500" />
         <div className="w-3 h-3 rounded-full bg-lime-500" />
         <span className="text-gray-600 ml-2">status.sh</span>
       </div>

@@ -105,8 +105,8 @@ const HeroSection = ({
                   transition={{ delay: 0.4 }}
                   className="flex items-center gap-3 mb-2"
                 >
-                  <RiFlashlightFill className="text-2xl text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.7)]" />
-                  <span className="text-xs text-yellow-400 font-space-mono tracking-widest uppercase border border-yellow-400/30 px-2 py-1">
+                  <RiFlashlightFill className="text-2xl text-lime-400 drop-shadow-[0_0_10px_rgba(132,204,22,0.7)]" />
+                  <span className="text-xs text-lime-400 font-space-mono tracking-widest uppercase border border-lime-400/30 px-2 py-1">
                     AI Agent
                   </span>
                 </motion.div>
@@ -179,7 +179,7 @@ const HeroSection = ({
                 className={`px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-space-mono tracking-wider flex items-center gap-1 sm:gap-2 ${
                   agentDetails?.subscriptionType === "free"
                     ? "bg-lime-500/10 border border-lime-400/50 text-lime-400 shadow-[0_0_15px_rgba(132,204,22,0.2)]"
-                    : "bg-yellow-500/10 border border-yellow-400/50 text-yellow-400 shadow-[0_0_15px_rgba(250,204,21,0.2)]"
+                    : "bg-fuchsia-500/10 border border-fuchsia-400/50 text-fuchsia-400 shadow-[0_0_15px_rgba(255,0,255,0.2)]"
                 }`}
               >
                 <FiDollarSign className="text-sm sm:text-base" />

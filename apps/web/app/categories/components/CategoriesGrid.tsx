@@ -45,7 +45,7 @@ const getCategoryIcon = (categoryKey: string) => {
   return iconMap[categoryKey.toLowerCase()] || <BsRobot className="text-2xl" />;
 };
 
-// Get color scheme for category
+// Get color scheme for category - only 3 colors: cyan, fuchsia, lime
 const getCategoryColor = (index: number) => {
   const colors = [
     {
@@ -65,24 +65,6 @@ const getCategoryColor = (index: number) => {
       hoverBorder: "hover:border-lime-400",
       text: "text-lime-400",
       bg: "bg-lime-400/10",
-    },
-    {
-      border: "border-yellow-500/30",
-      hoverBorder: "hover:border-yellow-400",
-      text: "text-yellow-400",
-      bg: "bg-yellow-400/10",
-    },
-    {
-      border: "border-orange-500/30",
-      hoverBorder: "hover:border-orange-400",
-      text: "text-orange-400",
-      bg: "bg-orange-400/10",
-    },
-    {
-      border: "border-pink-500/30",
-      hoverBorder: "hover:border-pink-400",
-      text: "text-pink-400",
-      bg: "bg-pink-400/10",
     },
   ];
   return colors[index % colors.length];

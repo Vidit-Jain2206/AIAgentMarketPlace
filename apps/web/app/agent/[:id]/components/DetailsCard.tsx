@@ -19,14 +19,14 @@ const DetailsCard = ({
   return (
     <motion.div
       whileHover={{ y: -4 }}
-      className="relative bg-black/60 backdrop-blur-xl border border-yellow-500/20 p-6 hover:border-yellow-400/50 transition-all duration-500"
+      className="relative bg-black/60 backdrop-blur-xl border border-fuchsia-500/20 p-6 hover:border-fuchsia-400/50 transition-all duration-500"
       style={{
         clipPath:
           "polygon(0 0, calc(100% - 12px) 0, 100% 12px, 100% 100%, 12px 100%, 0 calc(100% - 12px))",
       }}
     >
-      <h3 className="text-xl font-orbitron font-bold mb-4 text-yellow-400 tracking-wide flex items-center gap-2">
-        <FiZap className="text-yellow-400" />
+      <h3 className="text-xl font-orbitron font-bold mb-4 text-fuchsia-400 tracking-wide flex items-center gap-2">
+        <FiZap className="text-fuchsia-400" />
         DETAILS
       </h3>
       <div className="space-y-4 font-space-mono text-sm">
@@ -37,7 +37,7 @@ const DetailsCard = ({
         <div className="flex items-center justify-between border-b border-gray-800 pb-2">
           <span className="text-gray-500">Pricing</span>
           <span
-            className={`capitalize ${subscriptionType === "free" ? "text-lime-400" : "text-yellow-400"}`}
+            className={`capitalize ${subscriptionType === "free" ? "text-lime-400" : "text-fuchsia-400"}`}
           >
             {subscriptionType}
           </span>
@@ -60,7 +60,7 @@ const DetailsCard = ({
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ delay: 1.3 + idx * 0.05 }}
-                  className="px-3 py-1 bg-gray-900 border border-gray-800 text-gray-400 text-xs font-space-mono hover:border-fuchsia-400/50 hover:text-fuchsia-400 transition cursor-default"
+                  className="px-3 py-1 bg-gray-900 border border-gray-800 text-gray-400 text-xs font-space-mono hover:border-cyan-400/50 hover:text-cyan-400 transition cursor-default"
                 >
                   #{tag}
                 </motion.span>
@@ -74,4 +74,3 @@ const DetailsCard = ({
 };
 
 export default DetailsCard;
-
