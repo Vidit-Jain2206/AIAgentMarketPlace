@@ -1,6 +1,6 @@
 import axios from "axios";
 const BASE_URL: string =
-  process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000/api/v1";
+  process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:9999/api/v1";
 
 export const getAgentDetails = async (agentName: string) => {
   try {
